@@ -1,0 +1,74 @@
+@import url(http://fonts.googleapis.com/css?family=Rye);
+@import url(http://fonts.googleapis.com/css?family=Special+Elite);
+
+body {
+	height: 900px;
+	background-image: url(http://fc03.deviantart.net/fs30/i/2008/138/d/2/ornate_wallpaper_by_insurrectionx.jpg);
+	background-size: 300px;
+}
+#portrait img {
+	height: 350px;
+	width: auto;
+	box-shadow: 3px 3px 10px black;
+	border-radius: 10px;
+	transition: all .4s ease-in-out;
+}
+#skills, #education, #shoutBox, #employers, #contact {
+	width: 250px;
+	height:300px;
+	font-family: "Special Elite";
+	border-radius: 10px;
+	display: block;
+	padding: 10px;
+	float: left;
+	box-shadow: 3px 3px 10px black;
+	margin: 20px;
+	text-align: center;
+	background: rgba(0, 255, 255, 0.82);
+	color: black;
+	transition: all .4s ease-in-out;
+}
+#shoutBox p {
+	border: 3px solid black;
+	height: 190px;
+	overflow: scroll;
+	text-align: left;
+	padding: 4px;
+}
+#skills:hover, #portrait img:hover, #education:hover, #employers:hover, #contact:hover, #shoutBox:hover {
+	box-shadow: 9px 9px 20px #000;
+	-webkit-transform: rotate(3deg) scale(1.06);
+}
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+#name {
+	font-family: "Rye";
+	text-shadow: 5px 5px 0 white;
+}
+#shoutBox {
+	position: absolute;
+	top: 475px;
+	left: 600px;
+}
+#education {
+	position: absolute;
+	top: 40px;
+	left: 320px;
+}
+#employers {
+	position: absolute;
+	top: 120px;
+	left: 635px;
+}
+#contact {
+	position: absolute;
+	top: 390px;
+	left: 300px;
+}
+
