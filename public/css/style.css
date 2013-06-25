@@ -6,6 +6,15 @@ body {
 	background-image: url(http://fc03.deviantart.net/fs30/i/2008/138/d/2/ornate_wallpaper_by_insurrectionx.jpg);
 	background-size: 300px;
 }
+#add_form {
+	background-color: rgba(0, 235, 255, 0.73);
+	width: 500px;
+	margin: 0 auto;
+	padding: 40px;
+	box-shadow: 4px 4px 10px black;
+	border-radius: 10px;
+	border: 2px black solid;
+}
 #portrait img {
 	height: 350px;
 	width: auto;
@@ -67,6 +76,7 @@ body {
 	left: 635px;
 }
 #contact {
+	font-size: 20px;
 	position: absolute;
 	top: 390px;
 	left: 300px;

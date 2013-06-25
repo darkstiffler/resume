@@ -46,4 +46,20 @@ $(document).ready(function() {
 
 		}
 	});
+	
+	$('#save_exit').click(function() {
+		console.log('Success')
+	});
+
+	$('#add_form').submit(function(){
+		var userData = {};
+		userData['#signup_name'] = $('#signup_name').val();
+		console.log(userData); 
+		return false;
+	});
 });
+
+
+
+
+
