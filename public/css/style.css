@@ -37,9 +37,24 @@ body {
 	color: black;
 	transition: all .3s ease-in-out;
 }
+#editMe {
+	margin: 4px;
+	background-color: white;
+	color: black;
+	padding: 5px;
+	border: 1px solid black;
+	border-radius: 2px;
+}
+#editMe:hover {
+	text-decoration: none;
+}
+#sbInput {
+	width: 175px;
+}
 #shoutBox p {
-	border: 3px solid black;
+	border: 1px solid black;
 	height: 190px;
+	border-radius: 3px;
 	overflow: scroll;
 	text-align: left;
 	padding: 4px;
