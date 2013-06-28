@@ -90,7 +90,10 @@ $(document).ready(function() {
 		console.log(userData);
 		return false;
 
-
+		$.ajax({
+			url : 'api/resumes',
+			type : 'POST',
+			data : JSON.stringify({resume : userData});
 	})
 });
 

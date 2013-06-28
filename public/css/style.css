@@ -27,14 +27,13 @@ body {
 	height:300px;
 	font-family: "Special Elite";
 	border-radius: 10px;
-	display: block;
 	padding: 10px;
-	float: left;
 	box-shadow: 3px 3px 10px black;
 	margin: 20px;
 	text-align: center;
 	background: rgba(0, 255, 255, 0.82);
 	color: black;
+	-webkit-transition: all .3s ease-in-out;
 	transition: all .3s ease-in-out;
 }
 #editMe {
@@ -62,6 +61,7 @@ body {
 #skills:hover, #portrait img:hover, #education:hover, #employers:hover, #contact:hover, #shoutBox:hover {
 	box-shadow: 9px 9px 20px #000;
 	-webkit-transform: rotate(3deg) scale(1.06);
+	transform: rotate(3deg) scale(1.06);
 }
 .clearfix:after {
 	content: ".";
