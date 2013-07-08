@@ -1,8 +1,10 @@
 $(document).ready(function() {
-	console.log('Doc. Ready!');
-	$.ajax('/api/resumes/51c2098b9d8045c5d2000001', {
+	console.log('Loaded...');
+	var currentRecord;
+	$.ajax('/api/resumes', {
 		complete : function(response) {
-			var callBack = response.responseJSON;   // saving callBack * * 
+			var callBack = response.responseJSON[0];   // saving callBack * * 
+			currentRecord = callBack.id;
 
 			var first = callBack.name_first;   // LOGGING NAME *
 			var last = callBack.name_last;
@@ -30,27 +32,30 @@ $(document).ready(function() {
 			$('#school2').html(school2);
 			$('#school3').html(school3);
 
-			var skill1 = callBack.skill[0].title;
+			var skill1 = callBack.skill[0].title;     // SKILLS *
 			var skill2 = callBack.skill[1].title;
 			var skill3 = callBack.skill[2].title;
 			$('#skill1').html(skill1);
 			$('#skill2').html(skill2);
 			$('#skill3').html(skill3);
 
-			var exp1 = callBack.experience[0].organization;
+			var exp1 = callBack.experience[0].organization; // EXPERIENCES * 
 			var exp2 = callBack.experience[1].organization;
 			$('#exp1').html(exp1);
 			$('#exp2').html(exp2);
 		}
 	});
-	
+	$('#delete').click(function(){
+		console.log(currentRecord);
+		$.ajax({url : 'api/resumes/' + currentRecord,
+				type : 'DELETE',
+				success : function(result){
+					console.log('Deleted : ' + currentRecord);
+				}
+		});
 
-	$('#add_form').submit(function(){
-		var fullName = $('#signup_name').val();
 		return false;
 	});
-
-
 
 	$('#shoutForm').submit(function(event){
 		console.log(event);
@@ -63,9 +68,7 @@ $(document).ready(function() {
 		return false;
 	});
 
-
-
-	$('#add_form').submit(function(){
+	$('#add_form').submit(function(){           // UPON CLICKING SUBMIT ***
 		var userData = {};
 
 		userData.contact_info = {};
@@ -88,13 +91,16 @@ $(document).ready(function() {
 		userData.experience[0] = {};
 		userData.experience[0].organization = $('#add_employer').val();
 		console.log(userData);
-		return false;
 
-		$.ajax({
-			url : 'api/resumes',
-			type : 'POST',
-			data : JSON.stringify({resume : userData});
-	})
+		$.ajax({url:'api/resumes',     // AJAX POST REQUEST *
+				type:'POST',
+				data: JSON.stringify({'resume' : userData})
+		}); 
+
+
+		return false;
+		
+	});
 });
 
 
